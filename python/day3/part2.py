@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Answer for Advent of Code, Day 3.1."""
+"""Answer for Advent of Code, Day 3.2."""
 
 
 def build_grid():
