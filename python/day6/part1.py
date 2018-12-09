@@ -86,8 +86,6 @@ def run():
         if spot[len(spot)].upper() not in cheaters:
             cheaters.append(spot[len(spot)].upper())
 
-    print(cheaters)
-
     hiscore = [None, 0]
     for letter, score in scoreboard.items():
         if letter not in cheaters and score > hiscore[1]:
