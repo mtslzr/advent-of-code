@@ -1,1 +1,1 @@
-input.txt
+../../py/day1/input.txt
