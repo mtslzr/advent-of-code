@@ -1,0 +1,12 @@
+{
+  "name": "advent-of-code",
+  "version": "2019.0",
+  "description": "Advent of Code",
+  "main": "index.js",
+  "repository": "https://github.com/mtslze/advent-of-code",
+  "author": "Matthew Salazar <m@tthewsalazar.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^12.12.14"
+  }
+}
