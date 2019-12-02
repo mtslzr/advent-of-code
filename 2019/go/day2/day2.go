@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"os"
 	"strconv"
 	"strings"
 )
@@ -16,7 +17,20 @@ func Part1() {
 
 // Part2 processes combinations of intcodes and finds a specific first value.
 func Part2() {
-	fmt.Println("Part 2")
+	x := 0
+	y := 0
+	for x < 99 {
+		for y < 99 {
+			nums := runIntcode(readInput("day2/input.txt"), x, y)
+			if nums[0] == 19690720 {
+				fmt.Println((100*x + y))
+				os.Exit(1)
+			}
+			y++
+		}
+		x++
+		y = 0
+	}
 }
 
 func main() {
