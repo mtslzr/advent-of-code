@@ -1,4 +1,5 @@
 import * as day1 from './day1/day1';
+import * as day2 from './day2/day2';
 
 switch (process.argv[2]) {
   case "day1":
@@ -6,6 +7,9 @@ switch (process.argv[2]) {
     day1.part2();
     break;
   case "day2":
+    day2.part1();
+    day2.part2();
+    break;
   case "day3":
   case "day4":
   case "day5":
