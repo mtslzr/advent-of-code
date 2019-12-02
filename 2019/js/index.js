@@ -30,5 +30,5 @@ switch (process.argv[2]) {
   case "day24":
   case "day25":
   default:
-    console.log('Chosen day unavailable.');
+    console.log('Day not found.');
 }
