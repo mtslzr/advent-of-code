@@ -24,7 +24,7 @@ func Part2() {
 			nums := runIntcode(readInput("day2/input.txt"), x, y)
 			if nums[0] == 19690720 {
 				fmt.Println((100*x + y))
-				os.Exit(1)
+				os.Exit(0)
 			}
 			y++
 		}
