@@ -1,12 +1,15 @@
 <?php
 
 include "day1/day1.php";
+include "day2/day2.php";
 
 switch($argv[1]) {
   case "day1":
     $day = new day1;
   break;
   case "day2":
+    $day = new day2;
+  break;
   case "day3":
   case "day4":
   case "day5":
