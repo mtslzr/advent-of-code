@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Answer for Advent of Code 2019, Day 1.1."""
+"""Answer for Advent of Code 2019, Day 1."""
 
 from math import floor
 
