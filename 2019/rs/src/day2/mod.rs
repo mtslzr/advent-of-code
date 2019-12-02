@@ -1,5 +1,6 @@
 use std::fs::File;
 use std::io::prelude::*;
+use std::process;
 
 pub fn part1() {
   let nums: Vec<i32> = run_intcode(read_input("./src/day2/input.txt"), 12, 2);
@@ -7,7 +8,21 @@ pub fn part1() {
 }
 
 pub fn part2() {
-  println!("Part 2");
+  let mut x: i32 = 0;
+  let mut y: i32 = 0;
+
+  while x <= 99 {
+    while y <= 99 {
+      let nums: Vec<i32> = run_intcode(read_input("./src/day2/input.txt"), x, y);
+      if nums[0] == 19690720 {
+        println!("{}", 100 * x + y);
+        process::exit(0);
+      }
+      y += 1;
+    }
+    x += 1;
+    y = 0;
+  }
 }
 
 fn read_input(file: &str) -> Vec<i32> {
