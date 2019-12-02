@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/mtslzr/advent-of-code/2019/go/day1"
+	"github.com/mtslzr/advent-of-code/2019/go/day2"
 )
 
 func main() {
@@ -16,7 +17,8 @@ func main() {
 			day1.Part1()
 			day1.Part2()
 		case "day2":
-			fmt.Println("Day 2!")
+			day2.Part1()
+			day2.Part2()
 		default:
 			fmt.Println("Day not found.")
 		}
