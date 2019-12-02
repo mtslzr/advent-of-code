@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"os"
 	"strconv"
 	"strings"
 )
@@ -22,7 +23,26 @@ func Part1() {
 
 // Part2 does the second part.
 func Part2() {
-	fmt.Println("Part 2")
+	hits := make(map[int]int)
+	total := 0
+	x := 0
+	freqs := readInput("day1/input.txt")
+
+	for x < len(freqs) {
+		total += freqs[x]
+		if hits[total] == 1 {
+			fmt.Println(total)
+			os.Exit(0)
+		}
+
+		hits[total] = 1
+
+		if (x + 1) == len(freqs) {
+			x = 0
+		} else {
+			x++
+		}
+	}
 }
 
 func readInput(file string) []int {
