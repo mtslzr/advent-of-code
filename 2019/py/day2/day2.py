@@ -34,8 +34,6 @@ def read_input(filename):
         nums[x] = int(num)
         x += 1
 
-    nums[1] = 12
-    nums[2] = 2
     return nums
 
 
