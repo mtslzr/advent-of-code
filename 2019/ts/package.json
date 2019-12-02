@@ -6,6 +6,10 @@
   "repository": "https://github.com/mtslze/advent-of-code",
   "author": "Matthew Salazar <m@tthewsalazar.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc index.ts",
+    "start": "yarn build; node index.js"
+  },
   "dependencies": {
     "@types/node": "^12.12.14"
   }

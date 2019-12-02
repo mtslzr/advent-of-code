@@ -6,7 +6,19 @@ const part1 = () => {
 }
 
 const part2 = () => {
-  console.log("Part 2");
+  let x = 0, y = 0;
+  while (x <= 99) {
+    while (y <= 99) {
+      let nums = runIntcode(readInput('day2/input.txt'), x, y);
+      if (nums[0] == 19690720) {
+        console.log(100 * x + y);
+        process.exit();
+      }
+      y++;
+    }
+    x++;
+    y = 0;
+  }
 }
 
 const readInput = (file: string): number[] => {
