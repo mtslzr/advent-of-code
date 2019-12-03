@@ -3,15 +3,12 @@
 
 from day1 import day1
 from day2 import day2
+from day3 import day3
 import sys
 
 
 def run():
     """Parse input and call daily script."""
-    days = []
-    for x in range(1, 1):
-        days.append('day' + x)
-
     if len(sys.argv) < 2:
         print('Day not found.')
         sys.exit()
@@ -22,6 +19,9 @@ def run():
     elif sys.argv[1] == 'day2':
         day2.part1()
         day2.part2()
+    elif sys.argv[1] == 'day3':
+        day3.part1()
+        day3.part2()
     else:
         print('Day not found.')
         sys.exit()
