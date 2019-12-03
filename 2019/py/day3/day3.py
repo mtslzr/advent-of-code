@@ -12,14 +12,16 @@ def part1():
 
 
 def part2():
-    """."""
-    print('Part 2')
+    """Find shortest steps to intersection of two wires."""
+    moves = read_input('./day3/input.txt')
+    matches = parse_moves(moves)
+    print(find_shortest_match(matches))
 
 
 def find_closest_match(matches):
     """Iterate coords and find closest to (0,0)."""
     dist = False
-    for match in matches:
+    for match, steps in matches.items():
         coords = match.split('/')
         x = 0
         for coord in coords:
@@ -31,11 +33,22 @@ def find_closest_match(matches):
     return dist
 
 
+def find_shortest_match(matches):
+    """Iterate coords and find fewest steps."""
+    dist = False
+    for match, steps in matches.items():
+        total = steps['a'] + steps['b']
+        if not dist or total < dist:
+            dist = total
+    return dist
+
+
 def parse_moves(moves):
     """Iterate move sets and return list of crosses."""
-    loc = {'a': [], 'b': []}
+    loc = {}
     cur_x = {'a': 0, 'b': 0}
     cur_y = {'a': 0, 'b': 0}
+    steps = {'a': 0, 'b': 0}
     i = 0
 
     while i < len(moves['a']):
@@ -43,18 +56,26 @@ def parse_moves(moves):
             move_dir = moves[ab][i][0]
             move_len = int(moves[ab][i][1:])
             if move_dir in ['L', 'R', 'U', 'D']:
-                cur_x, cur_y, loc = process_move(move_dir, move_len,
-                                                 cur_x, cur_y, ab, loc)
+                cur_x, cur_y, loc, steps = process_move(move_dir, move_len,
+                                                        loc, cur_x, cur_y, ab,
+                                                        steps)
             else:
                 print('Unexpected direction:', move_dir)
                 sys.exit()
         i += 1
-    return (set(loc['a']) & set(loc['b']))
+
+    matches = {}
+    for coord, steps in loc.items():
+        if len(steps) == 2:
+            matches[coord] = steps
+
+    return matches
 
 
-def process_move(move_dir, move_len, cur_x, cur_y, ab, loc):
+def process_move(move_dir, move_len, loc, cur_x, cur_y, ab, steps):
     """Process a single move."""
     while move_len > 0:
+        steps[ab] += 1
         if move_dir == 'L':
             cur_x[ab] -= 1
         elif move_dir == 'R':
@@ -63,9 +84,12 @@ def process_move(move_dir, move_len, cur_x, cur_y, ab, loc):
             cur_y[ab] += 1
         else:
             cur_y[ab] -= 1
-        loc[ab].append(str(cur_x[ab]) + '/' + str(cur_y[ab]))
+        coord = str(cur_x[ab]) + '/' + str(cur_y[ab])
+        if coord not in loc:
+            loc[coord] = {}
+        loc[coord][ab] = steps[ab]
         move_len -= 1
-    return cur_x, cur_y, loc
+    return cur_x, cur_y, loc, steps
 
 
 def read_input(filename):
