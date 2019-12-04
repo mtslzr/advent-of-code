@@ -4,6 +4,7 @@
 from day1 import day1
 from day2 import day2
 from day3 import day3
+from day4 import day4
 import sys
 
 
@@ -22,6 +23,9 @@ def run():
     elif sys.argv[1] == 'day3':
         day3.part1()
         day3.part2()
+    elif sys.argv[1] == 'day4':
+        day4.part1()
+        day4.part2()
     else:
         print('Day not found.')
         sys.exit()
