@@ -19,11 +19,17 @@ def part1():
             continue
         passwords.append(x)
     print(len(passwords))
+    part2(passwords)
 
 
-def part2():
-    """."""
-    print('Part 2')
+def part2(passwords):
+    """Test for valid passwords based on given criteria."""
+    new_passwords = []
+    for x in passwords:
+        if has_strict_double([i for i in str(x)]):
+            new_passwords.append(x)
+        x += 1
+    print(len(new_passwords))
 
 
 def has_double(pw, y=1):
@@ -33,6 +39,20 @@ def has_double(pw, y=1):
             return True
         y += 1
     return False
+
+
+def has_strict_double(pw, y=1):
+    """Check that password has a double-digit."""
+    double = False
+    while y < len(pw):
+        if double and pw[y] != pw[y-1]:
+            return True
+        if pw[y] == pw[y-1]:
+            double = True
+        if pw[y] == pw[y-1] and pw[y] == pw[y-2]:
+            double = False
+        y += 1
+    return double
 
 
 def in_pw_range(pw):

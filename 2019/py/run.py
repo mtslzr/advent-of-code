@@ -25,7 +25,6 @@ def run():
         day3.part2()
     elif sys.argv[1] == 'day4':
         day4.part1()
-        day4.part2()
     else:
         print('Day not found.')
         sys.exit()
