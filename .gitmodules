@@ -10,3 +10,6 @@
 [submodule "php"]
 	path = php
 	url = git://github.com/mtslzr/advent-of-code-php.git
+[submodule "rs"]
+	path = rs
+	url = git://github.com/mtslzr/advent-of-code-rs.git
