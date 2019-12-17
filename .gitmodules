@@ -1,3 +1,6 @@
 [submodule "py"]
 	path = py
 	url = git://github.com/mtslzr/advent-of-code-py.git
+[submodule "go"]
+	path = go
+	url = git://github.com/mtslzr/advent-of-code-go.git
