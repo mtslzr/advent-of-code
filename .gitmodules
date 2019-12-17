@@ -13,3 +13,6 @@
 [submodule "rs"]
 	path = rs
 	url = git://github.com/mtslzr/advent-of-code-rs.git
+[submodule "swift"]
+	path = swift
+	url = git://github.com/mtslzr/advent-of-code-swift.git
