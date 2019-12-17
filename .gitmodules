@@ -7,3 +7,6 @@
 [submodule "ts"]
 	path = ts
 	url = git://github.com/mtslzr/advent-of-code-ts.git
+[submodule "php"]
+	path = php
+	url = git://github.com/mtslzr/advent-of-code-php.git
