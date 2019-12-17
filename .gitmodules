@@ -4,3 +4,6 @@
 [submodule "go"]
 	path = go
 	url = git://github.com/mtslzr/advent-of-code-go.git
+[submodule "ts"]
+	path = ts
+	url = git://github.com/mtslzr/advent-of-code-ts.git
