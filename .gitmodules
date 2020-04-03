@@ -1,18 +1,18 @@
 [submodule "py"]
 	path = py
-	url = git://github.com/mtslzr/advent-of-code-py.git
+	url = git://github.com/mtslzr/aoc-py.git
 [submodule "go"]
 	path = go
-	url = git://github.com/mtslzr/advent-of-code-go.git
+	url = git://github.com/mtslzr/aoc-go.git
 [submodule "ts"]
 	path = ts
-	url = git://github.com/mtslzr/advent-of-code-ts.git
+	url = git://github.com/mtslzr/aoc-ts.git
 [submodule "php"]
 	path = php
-	url = git://github.com/mtslzr/advent-of-code-php.git
+	url = git://github.com/mtslzr/aoc-php.git
 [submodule "rs"]
 	path = rs
-	url = git://github.com/mtslzr/advent-of-code-rs.git
+	url = git://github.com/mtslzr/aoc-rs.git
 [submodule "swift"]
 	path = swift
-	url = git://github.com/mtslzr/advent-of-code-swift.git
+	url = git://github.com/mtslzr/aoc-swift.git
